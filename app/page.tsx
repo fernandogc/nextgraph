@@ -1,9 +1,8 @@
+import {redirect} from 'next/navigation'
+
 const Home = () => {
-  return (
-    <main>
-      <div>Home</div>
-    </main>
-  )
+  redirect('/characters')
+  return null
 }
 
 export default Home
