@@ -1,4 +1,4 @@
-import {GET_EPISODES} from '@/queries'
+import {GET_EPISODES} from '@/queries/episodes'
 import getClient from '@/lib/apolloClient'
 import {EpisodesData} from '@/types'
 import Pagination from '@/components/pagination'

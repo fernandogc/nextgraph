@@ -1,4 +1,4 @@
-import { GET_CHARACTERS } from '@/queries'
+import { GET_CHARACTERS } from '@/queries/characters'
 import getClient from '@/lib/apolloClient'
 import {CharactersData} from '@/types'
 import Pagination from '@/components/pagination'

@@ -1,4 +1,4 @@
-import {GET_LOCATIONS} from '@/queries'
+import {GET_LOCATIONS} from '@/queries/locations'
 import getClient from '@/lib/apolloClient'
 import {LocationsData} from '@/types'
 import Pagination from '@/components/pagination'
