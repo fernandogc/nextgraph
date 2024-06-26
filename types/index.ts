@@ -4,7 +4,7 @@ type Character = {id: number; name: string; species: string; origin: Location; l
 type Characters = {info: Info; results: Character[]}
 export type CharactersData = {characters: Characters}
 
-export type CharacterDetailData = {character: Character & {episode: Episode[]; image: string}}
+export type CharacterDetailData = {character: Character & {episode: Episode[]; image: string; status: string; type: string; gender: string}}
 
 type Episode = {id: number; name: string; air_date: string; episode: string}
 type Episodes = {info: Info; results: Episode[]}

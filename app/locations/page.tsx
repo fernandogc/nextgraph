@@ -2,7 +2,7 @@ import {GET_LOCATIONS} from '@/queries/locations'
 import getClient from '@/lib/apolloClient'
 import {LocationsData} from '@/types'
 import Pagination from '@/components/pagination'
-import Link from 'next/link'
+import Link from '@/components/link'
 
 type Props = {searchParams: {page: string}}
 
@@ -19,11 +19,11 @@ const LocationsTable = ({locations}: {locations: LocationsData['locations']['res
       </thead>
       <tbody>
         {locations.map((location) => (
-          <tr key={location.id}>
+          <tr key={location.id} className="hoverHighlight">
             <td>{location.name}</td>
             <td>{location.type}</td>
             <td>{location.dimension}</td>
-            <td><Link href={`/locations/${location.id}`} passHref><button>View</button></Link></td>
+            <td style={{width: 0}}><Link href={`/locations/${location.id}`} passHref><button>View</button></Link></td>
           </tr>
         ))}
       </tbody>

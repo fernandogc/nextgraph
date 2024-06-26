@@ -2,7 +2,7 @@ import {GET_EPISODES} from '@/queries/episodes'
 import getClient from '@/lib/apolloClient'
 import {EpisodesData} from '@/types'
 import Pagination from '@/components/pagination'
-import Link from 'next/link'
+import Link from '@/components/link'
 
 type Props = {searchParams: {page: string}}
 
@@ -19,11 +19,11 @@ const EpisodesTable = ({episodes}: {episodes: EpisodesData['episodes']['results'
       </thead>
       <tbody>
       {episodes.map((episode) => (
-        <tr key={episode.id}>
+        <tr key={episode.id} className="hoverHighlight">
           <td>{episode.name}</td>
           <td>{episode.episode}</td>
           <td>{episode.air_date}</td>
-          <td><Link href={`/episodes/${episode.id}`} passHref><button>View</button></Link></td>
+          <td style={{width: 0}}><Link href={`/episodes/${episode.id}`} passHref><button>View</button></Link></td>
         </tr>
       ))}
       </tbody>

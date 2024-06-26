@@ -2,7 +2,7 @@ import { GET_CHARACTERS } from '@/queries/characters'
 import getClient from '@/lib/apolloClient'
 import {CharactersData} from '@/types'
 import Pagination from '@/components/pagination'
-import Link from 'next/link'
+import Link from '@/components/link'
 
 type Props = {searchParams: {page: string}}
 
@@ -20,12 +20,12 @@ const CharactersTable = ({characters}: {characters: CharactersData['characters']
       </thead>
       <tbody>
         {characters.map((character) => (
-          <tr key={character.id}>
+          <tr key={character.id} className="hoverHighlight">
             <td>{character.name}</td>
             <td>{character.species}</td>
             <td>{character.origin.name}</td>
             <td>{character.origin.name}</td>
-            <td><Link href={`/characters/${character.id}`} passHref><button>View</button></Link></td>
+            <td style={{width: 0}}><Link href={`/characters/${character.id}`} passHref><button>View</button></Link></td>
           </tr>
         ))}
       </tbody>

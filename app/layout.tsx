@@ -1,10 +1,12 @@
-import Link from 'next/link'
 import type {Metadata} from "next"
 import {Inter} from "next/font/google"
+import {ProgressBar, ProgressBarProvider} from "react-transition-progress"
+import Header from '@/components/header'
+import './global.css'
 
 const inter = Inter({subsets: ["latin"]})
 
-export const metadata: Metadata = {title: "Rick and Morty API"}
+export const metadata: Metadata = {title: "Rick and Morty API Explorer"}
 
 const RootLayout: React.FC<React.PropsWithChildren> = ({children}) => (
   <html lang="en">
@@ -12,18 +14,11 @@ const RootLayout: React.FC<React.PropsWithChildren> = ({children}) => (
       <link rel="icon" href="/favicon.ico" />
     </head>
     <body className={inter.className}>
-      <header>
-        <Link href="/characters" passHref>
-          <button>Characters</button>
-        </Link>
-        <Link href="/episodes" passHref>
-          <button>Episodes</button>
-        </Link>
-        <Link href="/locations" passHref>
-          <button>Locations</button>
-        </Link>
-      </header>
-      <main>{children}</main>
+      <ProgressBarProvider>
+        <ProgressBar className="progressBar" />
+        <Header />
+        <main>{children}</main>
+      </ProgressBarProvider>
     </body>
   </html>
 )
